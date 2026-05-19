@@ -1,11 +1,35 @@
-# mupNBS - Fast NBS Library
+# Mup NBS
 
-### Why?
+Mup NBS is a lightweight `.nbs` parser and playback library for Java.
 
-It supports custom instruments, allowing more detailed song creations.
+It is designed for low-overhead playback and accurate timing using virtual-thread scheduling with support for fractional TPS playback.
 
-It also supports fractional tick speeds via virtual threads.
+## Features
 
-I also optimized it as efficiently as I could.
+- OpenNBS `.nbs` parsing
+- Audience playback
+- Fractional TPS support
+- Virtual-thread scheduler
+- Custom instrument support
 
-`songs/calamity.nbs` is a 70,000 note song, and it averages 3ms parse time.
+## Usage
+
+```java
+Playable song = NbsParser.parse(path);
+
+song.play(audience);
+```
+
+## Playback
+
+Mup NBS uses virtual threads for playback scheduling, allowing songs to run at fractional TPS values instead of being locked to whole Minecraft ticks.
+
+This improves timing precision for songs that do not map cleanly to integer tick intervals.
+
+## Supported Format
+
+- `.nbs` (OpenNBS)
+
+## License
+
+MIT
