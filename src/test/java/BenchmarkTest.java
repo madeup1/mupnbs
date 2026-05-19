@@ -26,7 +26,5 @@ public class BenchmarkTest
         }
 
         long end = System.nanoTime();
-
-        double avgMs = (end - start) / 1_000_000.0 / iterations;
     }
 }
